@@ -6,6 +6,7 @@ const Countries = () => {
 
   const [data, setData]= useState([]);
   const [rangeValue, setRangeValue]= useState(36);
+  const radios = ["Afrique", "Amérique", "Asie", "Europe", "Océanie"];
 
   useEffect (() =>{
     axios
@@ -22,6 +23,12 @@ const Countries = () => {
         max="250" 
         defaultValue={rangeValue} 
         onChange={(event) => setRangeValue(event.target.value)} />
+        {radios.map((continent) =>(
+          <li>
+            <input type="radio" id={continent} name="continentRadio" />
+            <label htmlFor={continent}>{continent}</label>
+          </li>
+        ))}
       </ul>
       <ul>
         {data
