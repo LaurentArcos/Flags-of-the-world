@@ -15,8 +15,8 @@ const Countries = () => {
     <div className="countries">
       <h1>COUNTRIES</h1>
       <ul>
-        {data.map((country) => (
-          <li key={country.name}>{country.translations.fra.commons}</li>
+        {data.map((country, index) => (
+          <li key={index}>{country.translations.fra.common}</li>
           ))}
       </ul>
     </div>
